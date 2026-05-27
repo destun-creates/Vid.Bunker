@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Link Hub</title>
+<!-- @ditya -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:
+      radial-gradient(circle at top right,#2d1a00 0%,transparent 25%),
+      radial-gradient(circle at bottom left,#1b0e00 0%,transparent 20%),
+      #050505;
+      min-height:100vh;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .bg-blur{
+      position:fixed;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:#ffb30022;
+      filter:blur(90px);
+      z-index:-1;
+    }
+
+    .blur1{
+      top:-100px;
+      right:-100px;
+    }
+
+    .blur2{
+      bottom:-100px;
+      left:-100px;
+    }
+
+    .container{
+      max-width:480px;
+      margin:auto;
+      padding:20px 16px 50px;
+    }
+
+    /* TOP BAR */
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      margin-bottom:30px;
+    }
+
+    .menu-btn{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:0.3s;
+      text-decoration:none;
+    }
+
+    .menu-btn:hover{
+      transform:scale(1.05);
+      border-color:#ffb300;
+      box-shadow:0 0 20px rgba(255,179,0,0.3);
+    }
+
+    .menu-btn span{
+      color:#ffcc4d;
+      font-size:18px;
+    }
+
+    /* HERO */
+
+    .hero{
+      margin-top:10px;
+      margin-bottom:35px;
+    }
+
+    .hero h1{
+      font-size:38px;
+      line-height:1.15;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
+    .hero h1 span{
+      color:#ffcc4d;
+    }
+
+    .hero p{
+      color:#b5b5b5;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    /* CARD */
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:26px;
+      padding:16px;
+      margin-bottom:18px;
+      backdrop-filter:blur(18px);
+      transition:0.35s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+      130deg,
+      transparent,
+      rgba(255,204,77,0.08),
+      transparent
+      );
+      transform:translateX(-100%);
+      transition:0.6s;
+    }
+
+    .card:hover::before{
+      transform:translateX(100%);
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#ffcc4d55;
+      box-shadow:0 10px 35px rgba(255,179,0,0.18);
+    }
+
+    .card-top{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .thumb{
+      width:85px;
+      height:85px;
+      border-radius:18px;
+      object-fit:cover;
+    }
+
+    .info{
+      flex:1;
+    }
+
+    .info h3{
+      font-size:20px;
+      margin-bottom:5px;
+      font-weight:600;
+    }
+
+    .tag{
+      font-size:13px;
+      color:#ffcc4d;
+      margin-bottom:8px;
+    }
+
+    .desc{
+      color:#bcbcbc;
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .play-btn{
+      margin-top:16px;
+      width:100%;
+      height:54px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(135deg,#ffcc4d,#ff9800);
+      color:black;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .play-btn:hover{
+      transform:scale(1.02);
+      box-shadow:0 0 30px rgba(255,179,0,0.35);
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:30px;
+      color:#777;
+      font-size:13px;
+    }
+
+    @media(max-width:480px){
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      .thumb{
+        width:75px;
+        height:75px;
+      }
+
+      .info h3{
+        font-size:18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-blur blur1"></div>
+  <div class="bg-blur blur2"></div>
+
+  <div class="container">
+
+    <!-- TOP -->
+
+    <div class="topbar">
+      <a href="https://adityasingh701.github.io/Projects/" class="menu-btn">
+        <span>✦</span>
+      </a>
+    </div>
+
+    <!-- HERO -->
+
+    <div class="hero">
+      <h1>
+        Discover <br>
+        Premium <span>Links</span>
+      </h1>
+
+      <p>
+        Clean luxury UI with premium glassmorphism design,
+        smooth animations and mobile friendly layout.
+      </p>
+    </div>
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <img class="thumb"
+        src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=500&auto=format&fit=crop"
+        alt="">
+
+        <div class="info">
+          <h3>Movie Zone</h3>
+          <div class="tag">Entertainment • Trending</div>
+          <div class="desc">
+            Watch premium movies and trending content instantly.
+          </div>
+        </div>
+
+      </div>
+
+      <button class="play-btn"
+      onclick="openPage('https://vidbunker.in/watch/5B73HIpjU')">
+        ▶ PLAY NOW
+      </button>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <img class="thumb"
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=500&auto=format&fit=crop"
+        alt="">
+
+        <div class="info">
+          <h3>Travel World</h3>
+          <div class="tag">Adventure • Nature</div>
+          <div class="desc">
+            Explore premium destinations and luxury travel content.
+          </div>
+        </div>
+
+      </div>
+
+      <button class="play-btn"
+      onclick="openPage('https://vidbunker.in/watch/DCLo34Zie')">
+        ▶ PLAY NOW
+      </button>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <img class="thumb"
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500&auto=format&fit=crop"
+        alt="">
+
+        <div class="info">
+          <h3>Tech Universe</h3>
+          <div class="tag">AI • Future Tech</div>
+          <div class="desc">
+            Latest futuristic tools, AI content and innovations.
+          </div>
+        </div>
+
+      </div>
+
+      <button class="play-btn"
+      onclick="openPage('https://vidbunker.in/watch/bh2jSKC5h')">
+        ▶ PLAY NOW
+      </button>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <img class="thumb"
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500&auto=format&fit=crop"
+        alt="">
+
+        <div class="info">
+          <h3>Gaming Hub</h3>
+          <div class="tag">Live • Esports</div>
+          <div class="desc">
+            Experience next-gen gaming streams and live action.
+          </div>
+        </div>
+
+      </div>
+
+      <button class="play-btn"
+      onclick="openPage('https://vidbunker.in/watch/zbRlq1u8E')">
+        ▶ PLAY NOW
+      </button>
+
+    </div>
+
+    <div class="footer">
+      Destin Hub Collections © 2026
+    </div>
+
+  </div>
+<!-- dc/adi -->
+  <script>
+
+    function openPage(url){
+      window.open(url,'_blank');
+    }
+
+  </script>
+
+</body>
+</html>
